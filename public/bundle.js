@@ -41,7 +41,7 @@ function renderApp() {
       <li><a href="https://pruebascomunes.staging.atresplayer.com">pruebas comunes</a></li>
 
       <!-- New special link -->
-      <li><a href="https://example.com" class="set-wrapper">Set wrapperUrl & reload</a></li>
+      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/a8.museum267/" class="set-wrapper">Set wrapperUrl & reload</a></li>
     </ul>
   `;
 
