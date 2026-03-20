@@ -27,20 +27,21 @@ function injectStyles() {
   document.head.appendChild(style);
 }
 
-function renderApp() {
+async function renderApp() {
   const app = document.getElementById("root");
+
+  let linksData = [];
+  try {
+    const response = await fetch("links.json");
+    if (!response.ok) throw new Error("Network response was not ok");
+    linksData = await response.json();
+  } catch (error) {
+    console.error("Failed to fetch links.json:", error);
+  }
 
   app.innerHTML = `
     <ul>
-      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/freewheel-enable-hisense-3/">Ter Freewheel enable Hisense</a></li>
-      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/hisense-fix-user-agent-freewheel/">hisense-fix-user-agent-freewheel</a></li>
-      <li><a href="https://p8082.staging.atresplayer.com/">p8082</a></li>
-      <li><a href="https://duckduckgo.com">Duckduckgo 1</a></li>
-      <li><a href="https://google.com">Google 19-mar-2026</a></li>
-      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/a5.stem252/">a5.stem252</a></li>
-      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/a8.museum267/">a8.museum267</a></li>
-      <li><a href="https://pruebascomunes.staging.atresplayer.com">pruebas comunes</a></li>
-      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/a8.museum267/">Set wrapperUrl & reload</a></li>
+      ${linksData.map((link) => `<li><a href="${link.url}">${link.title}</a></li>`).join("\n")}
     </ul>
   `;
 
@@ -72,7 +73,7 @@ function initSpatialNavigation() {
 
 window.addEventListener("load", async () => {
   injectStyles();
-  renderApp();
+  await renderApp();
 
   await loadScript(
     "https://luke-chang.github.io/js-spatial-navigation/spatial_navigation.js",
