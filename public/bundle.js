@@ -95,7 +95,11 @@ function initSpatialNavigation() {
 }
 
 window.addEventListener("load", function () {
-  loadScript("https://tv-socket.atresmedia.com/target.js");
+  loadScript("https://tv-socket.atresmedia.com/target.js", function (err) {
+    if (err) {
+      console.error(err);
+    }
+  });
   injectStyles();
 
   renderApp(function () {
