@@ -1,4 +1,7 @@
 // bundle.js
+var main_url =
+  "https://smart-tv-app-selector-jmonser-1c4e6710d592acaaf9a6c7350f74a9165.gitlab.io";
+
 var IS_TIZEN = /Tizen/i.test(navigator.userAgent);
 
 function loadScript(src, callback) {
@@ -26,7 +29,7 @@ function injectStyles() {
 
 function fetchLinks(callback) {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "links.json", true);
+  xhr.open("GET", main_url + "/links.json", true);
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
