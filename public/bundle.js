@@ -1,6 +1,5 @@
 // bundle.js
-var main_url =
-  "https://smart-tv-app-selector-jmonser-1c4e6710d592acaaf9a6c7350f74a9165.gitlab.io";
+var main_url = "https://jmc-stagings.netlify.app";
 
 var IS_TIZEN = /Tizen/i.test(navigator.userAgent);
 
@@ -101,11 +100,11 @@ function initSpatialNavigation() {
 }
 
 window.addEventListener("load", function () {
-  loadScript("https://tv-socket.atresmedia.com/target.js", function (err) {
-    if (err) {
-      console.error(err);
-    }
-  });
+  // loadScript("https://tv-socket.atresmedia.com/target.js", function (err) {
+  //   if (err) {
+  //     console.error(err);
+  //   }
+  // });
   injectStyles();
 
   renderApp(function () {
