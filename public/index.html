@@ -1,48 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <script src="https://luke-chang.github.io/js-spatial-navigation/spatial_navigation.js"></script>
-    <script>
-      window.addEventListener('load', function() {
-        // Initialize
-        SpatialNavigation.init();
-  
-        // Define navigable elements (anchors and elements with "focusable" class).
-        SpatialNavigation.add({
-          selector: 'a, .focusable'
-        });
-  
-        // Make the *currently existing* navigable elements focusable.
-        SpatialNavigation.makeFocusable();
-  
-        // Focus the first navigable element.
-        SpatialNavigation.focus();
-      });
-    </script>
-    <style>
-      /* Add style to the focused elements */
-      :focus {
-        outline: 2px solid red;
-      }
-
-      body {
-        margin: 50px;
-        background-color: white;
-        font-size: 30px;
-      }
-    </style>
+    <meta charset="utf-8" />
+    <title>App Selector</title>
   </head>
   <body>
-    <ul>
-      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/freewheel-enable-hisense-3/">Ter Freewheel enable Hisense</a></li>
-      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/hisense-fix-user-agent-freewheel/">hisense-fix-user-agent-freewheel</a></li>
-      <li><a href="https://p8082.staging.atresplayer.com/">p8082</a></li>
-      <li><a href="https://duckduckgo.com">Duckduckgo 1</a></li>
-      <li><a href="https://google.com">Google 19-mar-2026</a></li>
-      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/a5.stem252/">a5.stem252</a></li>
-      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/a8.museum267/">a8.museum267</a></li>
-      <li><a href="https://pruebascomunes.staging.atresplayer.com">pruebas comunes</a></li>
-    </ul>
+    <div id="root"></div>
+    <script src="bundle.js"></script>
   </body>
 </html>
-

@@ -1,4 +1,5 @@
 // bundle.js
+const IS_TIZEN = Boolean(navigator.userAgent.match(/Tizen/i));
 
 function loadScript(src) {
   return new Promise((resolve, reject) => {
@@ -39,22 +40,21 @@ function renderApp() {
       <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/a5.stem252/">a5.stem252</a></li>
       <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/a8.museum267/">a8.museum267</a></li>
       <li><a href="https://pruebascomunes.staging.atresplayer.com">pruebas comunes</a></li>
-
-      <!-- New special link -->
-      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/a8.museum267/" class="set-wrapper">Set wrapperUrl & reload</a></li>
+      <li><a href="https://smarttv.atresplayer.com/_pruebas/DEVOPS/a8.museum267/">Set wrapperUrl & reload</a></li>
     </ul>
   `;
 
-  // Attach click handler to the special link
-  const specialLinks = app.querySelectorAll(".set-wrapper");
+  const links = app.querySelectorAll("a");
 
-  specialLinks.forEach((linkEl) => {
+  links.forEach((linkEl) => {
     linkEl.addEventListener("click", function (e) {
-      e.preventDefault(); // prevent normal navigation
+      if (IS_TIZEN) {
+        e.preventDefault(); // prevent normal navigation
 
-      const link = this.getAttribute("href");
-      window.localStorage.setItem("wrapperUrl", link);
-      document.location.reload();
+        const link = this.getAttribute("href");
+        window.localStorage.setItem("wrapperUrl", link);
+        document.location.reload();
+      }
     });
   });
 }
