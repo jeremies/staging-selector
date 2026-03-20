@@ -92,7 +92,7 @@ function initSpatialNavigation() {
   SpatialNavigation.init();
 
   SpatialNavigation.add({
-    selector: "a, .focusable",
+    selector: "a, .focusable"
   });
 
   SpatialNavigation.makeFocusable();
@@ -116,7 +116,7 @@ window.addEventListener("load", function () {
           return;
         }
         initSpatialNavigation();
-      },
+      }
     );
   });
 });
