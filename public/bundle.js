@@ -76,6 +76,9 @@ function renderApp(callback) {
           e.preventDefault();
 
           var link = this.getAttribute("href");
+          if (link.charAt(link.length - 1) !== "/") {
+            link = link + "/";
+          }
           window.localStorage.setItem("wrapperUrl", link);
           document.location.reload();
         }
