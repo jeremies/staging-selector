@@ -1,5 +1,8 @@
 // bundle.js
-var main_url = "https://front-a3media.github.io/staging-selector/";
+var main_url =
+  location.hostname === "localhost"
+    ? "./"
+    : "https://front-a3media.github.io/staging-selector/";
 
 var IS_TIZEN = /Tizen/i.test(navigator.userAgent);
 
@@ -26,9 +29,9 @@ function injectStyles() {
   document.head.appendChild(style);
 }
 
-function fetchLinks(callback) {
+function fetchLinks(url, callback) {
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", main_url + "/links.json", true);
+  xhr.open("GET", main_url + "/" + url, true);
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
@@ -51,40 +54,58 @@ function fetchLinks(callback) {
 function renderApp(callback) {
   var app = document.getElementById("root");
 
-  fetchLinks(function (err, linksData) {
-    if (err) {
-      console.error("Failed to fetch links.json:", err);
-      linksData = [];
+  fetchLinks("links-left.json", function (errLeft, linksLeft) {
+    if (errLeft) {
+      console.error("Failed to fetch links-left.json:", errLeft);
+      linksLeft = [];
     }
 
-    var html = "<ul>";
+    fetchLinks("links-right.json", function (errRight, linksRight) {
+      if (errRight) {
+        console.error("Failed to fetch links-right.json:", errRight);
+        linksRight = [];
+      }
 
-    for (var i = 0; i < linksData.length; i++) {
-      var link = linksData[i];
-      html += '<li><a href="' + link.url + '">' + link.title + "</a></li>";
-    }
+      var html = '<div style="overflow: hidden;">';
 
-    html += "</ul>";
-    app.innerHTML = html;
+      html +=
+        '<div style="float: left; width: 50%; box-sizing: border-box;"><ul>';
+      for (var i = 0; i < linksLeft.length; i++) {
+        var link = linksLeft[i];
+        html += '<li><a href="' + link.url + '">' + link.title + "</a></li>";
+      }
+      html += "</ul></div>";
 
-    var links = app.getElementsByTagName("a");
+      html +=
+        '<div style="float: left; width: 50%; box-sizing: border-box;"><ul>';
+      for (var i = 0; i < linksRight.length; i++) {
+        var link = linksRight[i];
+        html += '<li><a href="' + link.url + '">' + link.title + "</a></li>";
+      }
+      html += "</ul></div>";
 
-    for (var j = 0; j < links.length; j++) {
-      links[j].addEventListener("click", function (e) {
-        if (IS_TIZEN) {
-          e.preventDefault();
+      html += "</div>";
+      app.innerHTML = html;
 
-          var link = this.getAttribute("href");
-          if (link.charAt(link.length - 1) !== "/") {
-            link = link + "/";
+      var links = app.getElementsByTagName("a");
+
+      for (var j = 0; j < links.length; j++) {
+        links[j].addEventListener("click", function (e) {
+          if (IS_TIZEN) {
+            e.preventDefault();
+
+            var link = this.getAttribute("href");
+            if (link.charAt(link.length - 1) !== "/") {
+              link = link + "/";
+            }
+            window.localStorage.setItem("wrapperUrl", link);
+            document.location.reload();
           }
-          window.localStorage.setItem("wrapperUrl", link);
-          document.location.reload();
-        }
-      });
-    }
+        });
+      }
 
-    callback();
+      callback();
+    });
   });
 }
 
