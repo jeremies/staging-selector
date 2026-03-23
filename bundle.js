@@ -1,10 +1,6 @@
 // bundle.js
-var main_url =
-  location.hostname === "localhost"
-    ? "./"
-    : "https://front-a3media.github.io/staging-selector/";
-
 var IS_TIZEN = /Tizen/i.test(navigator.userAgent);
+var main_url = IS_TIZEN ? window.PUBLIC_PATH : "./";
 
 function loadScript(src, callback) {
   var script = document.createElement("script");
