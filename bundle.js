@@ -1,5 +1,5 @@
 // bundle.js
-var main_url = "https://jmc-stagings.netlify.app";
+var main_url = "https://front-a3media.github.io/staging-selector/";
 
 var IS_TIZEN = /Tizen/i.test(navigator.userAgent);
 
