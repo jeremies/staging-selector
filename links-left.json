@@ -10,5 +10,9 @@
   {
     "url": "https://pruebascomunes.staging.atresplayer.com",
     "title": "pruebas comunes"
+  },
+  {
+    "url": "https://joaquim.staging.atresplayer.com/",
+    "title": "joaquim.staging"
   }
 ]
