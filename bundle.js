@@ -122,7 +122,7 @@ window.addEventListener("load", function () {
   //     console.error(err);
   //   }
   // });
-  loadScript("polyfills/find.js", function (err) {
+  loadScript(main_url + "/" + "polyfills/find.js", function (err) {
     if (err) {
       console.error("Failed to load find polyfill:", err);
     }
