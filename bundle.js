@@ -117,11 +117,11 @@ function initSpatialNavigation() {
 }
 
 window.addEventListener("load", function () {
-  // loadScript("https://tv-socket.atresmedia.com/target.js", function (err) {
-  //   if (err) {
-  //     console.error(err);
-  //   }
-  // });
+  loadScript("https://tv-socket.atresmedia.com/target.js", function (err) {
+    if (err) {
+      console.error(err);
+    }
+  });
   loadScript(main_url + "/" + "polyfills/find.js", function (err) {
     if (err) {
       console.error("Failed to load find polyfill:", err);
