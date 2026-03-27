@@ -122,26 +122,23 @@ window.addEventListener("load", function () {
       console.error(err);
     }
   });
-  loadScript(
-    main_url + "/" + "polyfills/spatial-navigation-polyfill.js",
-    function (err) {
-      if (err) {
-        console.error("Failed to load find polyfill:", err);
-      }
-      injectStyles();
-
-      renderApp(function () {
-        // loadScript(
-        //   "https://luke-chang.github.io/js-spatial-navigation/spatial_navigation.js",
-        //   function (err) {
-        //     if (err) {
-        //       console.error(err);
-        //       return;
-        //     }
-        //     initSpatialNavigation();
-        //   }
-        // );
-      });
+  loadScript(main_url + "/" + "polyfills/find.js", function (err) {
+    if (err) {
+      console.error("Failed to load find polyfill:", err);
     }
-  );
+    injectStyles();
+
+    renderApp(function () {
+      loadScript(
+        "https://luke-chang.github.io/js-spatial-navigation/spatial_navigation.js",
+        function (err) {
+          if (err) {
+            console.error(err);
+            return;
+          }
+          initSpatialNavigation();
+        }
+      );
+    });
+  });
 });
