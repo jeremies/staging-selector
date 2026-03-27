@@ -874,14 +874,7 @@
   }
 
   function onKeyDown(evt) {
-    if (
-      !_sectionCount ||
-      _pause ||
-      evt.altKey ||
-      evt.ctrlKey ||
-      evt.metaKey ||
-      evt.shiftKey
-    ) {
+    if (!_sectionCount || _pause || evt.altKey || evt.ctrlKey || evt.shiftKey) {
       return;
     }
 
