@@ -129,7 +129,7 @@ window.addEventListener("load", function () {
     injectStyles();
 
     renderApp(function () {
-      loadScript(main_url + "/" + "spatial_navigation.js", function (err) {
+      loadScript(main_url + "/" + "libs/spatial_navigation.js", function (err) {
         if (err) {
           console.error(err);
           return;
