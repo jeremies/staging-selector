@@ -1193,6 +1193,10 @@
       return result;
     },
 
+    evalInClosure: function (code) {
+      return eval(code);
+    },
+
     // move(<direction>)
     // move(<direction>, <selector>)
     move: function (direction, selector) {
