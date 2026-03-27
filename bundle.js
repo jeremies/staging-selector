@@ -20,7 +20,7 @@ function loadScript(src, callback) {
 function injectStyles() {
   var style = document.createElement("style");
   style.innerHTML =
-    ":focus { outline: 2px solid red; }" +
+    ":focus { outline: 2px solid red !important; }" +
     "body { margin: 50px; background-color: white; font-size: 30px; }";
   document.head.appendChild(style);
 }
