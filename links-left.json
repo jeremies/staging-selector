@@ -14,5 +14,9 @@
   {
     "url": "https://joaquim.staging.atresplayer.com/",
     "title": "joaquim.staging"
+  },
+  {
+    "url": "https://lightning-tv.github.io/solid-demo-app/",
+    "title": "lsolid"
   }
 ]
