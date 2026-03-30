@@ -18,5 +18,9 @@
   {
     "url": "https://lightning-tv.github.io/solid-demo-app/",
     "title": "lsolid"
+  },
+  {
+    "url": "https://blits-demo.lightningjs.io/#/demos/tmdb",
+    "title": "blits"
   }
 ]
