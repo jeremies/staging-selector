@@ -30,5 +30,25 @@
   {
     "url": "https://4ac2-147-161-82-31.ngrok-free.app",
     "title": "blits-asecas"
+  },
+  {
+    "url": "https://lightning-tv.github.io/solid-demo-app/326/#/benchmark",
+    "title": "v326"
+  },
+  {
+    "url": "https://lightning-tv.github.io/solid-demo-app/300/#/benchmark",
+    "title": "v300"
+  },
+  {
+    "url": "https://lightning-tv.github.io/solid-demo-app/316/#/benchmark",
+    "title": "v316"
+  },
+  {
+    "url": "https://lightning-tv.github.io/solid-demo-app/#/benchmark",
+    "title": "vfinal"
+  },
+  {
+    "url": "",
+    "title": ""
   }
 ]
