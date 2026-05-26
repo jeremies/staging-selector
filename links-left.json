@@ -1,5 +1,9 @@
 [
   {
+    "url": "https://smarttv.atresplayer.com/_pruebas/DEVOPS/mvp-priority-ads/",
+    "title": "priority-ads"
+  },
+  {
     "url": "https://smarttv.atresplayer.com/_pruebas/DEVOPS/1234-shorts-webos/",
     "title": "1234-shorts-webos"
   },
@@ -12,10 +16,6 @@
     "title": "1234-shorts-desktop"
   },
   {
-    "url": "https://google.com",
-    "title": "Google 19-mar-2026"
-  },
-  {
     "url": "https://pruebascomunes.staging.atresplayer.com",
     "title": "pruebas comunes"
   },
@@ -24,56 +24,12 @@
     "title": "joaquim.staging"
   },
   {
-    "url": "https://lightning-tv.github.io/solid-demo-app/",
-    "title": "lsolid"
-  },
-  {
-    "url": "https://blits-demo.lightningjs.io/#/demos/tmdb",
-    "title": "blits"
-  },
-  {
-    "url": "https://e1a3-147-161-82-31.ngrok-free.app",
-    "title": "blits-c38"
-  },
-  {
-    "url": "https://4ac2-147-161-82-31.ngrok-free.app",
-    "title": "blits-asecas"
-  },
-  {
-    "url": "https://lightning-tv.github.io/solid-demo-app/326/#/benchmark",
-    "title": "v326"
-  },
-  {
-    "url": "https://lightning-tv.github.io/solid-demo-app/300/#/benchmark",
-    "title": "v300"
-  },
-  {
-    "url": "https://lightning-tv.github.io/solid-demo-app/316/#/benchmark",
-    "title": "v316"
-  },
-  {
-    "url": "https://lightning-tv.github.io/solid-demo-app/330/#/benchmark",
-    "title": "v330"
-  },
-  {
-    "url": "https://lightning-tv.github.io/solid-demo-app/#/benchmark",
-    "title": "vfinal"
-  },
-  {
     "url": "https://oscarg.staging.atresplayer.com/common/#/",
     "title": "oscarg"
   },
   {
     "url": "https://raulr.staging.atresplayer.com/common/#/",
     "title": "raulr"
-  },
-  {
-    "url": "https://036d-147-161-82-31.ngrok-free.app",
-    "title": "demo-solid"
-  },
-  {
-    "url": "",
-    "title": ""
   },
   {
     "url": "",
